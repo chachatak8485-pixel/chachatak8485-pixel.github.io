@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>$CHACHA — Solana's funniest bull run</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;background:#120D0A;font-family:'Space Grotesk',sans-serif;color:#FBF3E7;}
+  a{color:#F2C14E;text-decoration:none;}
+  a:hover{color:#ffd978;}
+  .display{font-family:'Archivo Black',sans-serif;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  img{display:block;max-width:100%;}
+  .wrap{width:100%;max-width:1240px;margin:0 auto;padding:0 40px 110px;}
+  .nav{display:flex;justify-content:space-between;align-items:center;padding:26px 0;flex-wrap:wrap;gap:12px;}
+  .nav-links{display:flex;gap:28px;align-items:center;}
+  .nav-links a{font-size:13px;color:#C9BFB2;}
+  .btn-red{font-size:13px;background:#B8321F;color:#FBF3E7;padding:9px 16px;border-radius:3px;font-weight:500;}
+  .marquee{overflow:hidden;white-space:nowrap;border-top:1px solid #2E2520;border-bottom:1px solid #2E2520;padding:10px 0;margin-top:8px;}
+  .marquee span{font-size:13px;color:#B8321F;letter-spacing:0.03em;}
+  .hero{margin-top:36px;display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;align-items:center;}
+  .hero h1{margin:0;font-size:52px;line-height:1.08;color:#FBF3E7;}
+  .hero p{margin:0;font-size:17px;line-height:1.6;color:#C9BFB2;max-width:480px;}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;}
+  .cta-primary{background:#B8321F;color:#FBF3E7;padding:14px 26px;border-radius:3px;font-weight:700;font-size:15px;}
+  .cta-outline{border:1px solid #4A3C2E;padding:14px 26px;border-radius:3px;font-size:15px;color:#FBF3E7;}
+  .hero-img{position:relative;border-radius:8px;overflow:hidden;border:1px solid #3A2E22;aspect-ratio:1/1;}
+  .hero-img img{width:100%;height:100%;object-fit:cover;}
+  .hero-img .cap{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(0deg,rgba(0,0,0,0.75),transparent);padding:18px 16px 12px;font-size:12px;color:#F2C14E;}
+  .section{margin-top:110px;}
+  .eyebrow{font-size:13px;color:#C9A14A;margin-bottom:10px;}
+  .h2{font-size:32px;margin:0 0 32px;}
+  .gallery{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;}
+  .g-item{border-radius:6px;overflow:hidden;border:1px solid #2E2520;aspect-ratio:1/1;position:relative;}
+  .g-item img{width:100%;height:100%;object-fit:cover;}
+  .g-item .cap{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(0deg,rgba(0,0,0,0.8),transparent);padding:12px 8px 8px;font-size:10px;color:#FBF3E7;}
+  .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:#2E2520;border:1px solid #2E2520;}
+  .stat{background:#120D0A;padding:28px 20px;text-align:center;}
+  .stat .v{font-size:30px;color:#F2C14E;}
+  .stat .l{font-size:12px;color:#9C9080;margin-top:8px;}
+  .step{display:flex;gap:24px;align-items:flex-start;padding:22px 0;border-bottom:1px solid #241C16;}
+  .step .n{font-size:22px;color:#B8321F;width:40px;flex-shrink:0;}
+  .step .title{font-size:17px;font-weight:500;}
+  .step .body{font-size:14px;color:#9C9080;margin-top:4px;line-height:1.5;}
+  .step .tag{font-size:12px;color:#8FA98C;border:1px solid #2E3A2C;padding:5px 10px;border-radius:3px;flex-shrink:0;}
+  .community{margin-top:110px;border-radius:8px;overflow:hidden;position:relative;border:1px solid #2E2520;}
+  .community img{width:100%;height:320px;object-fit:cover;object-position:center 20%;}
+  .community .overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(18,13,10,0.95),rgba(18,13,10,0.35));display:flex;flex-direction:column;justify-content:flex-end;align-items:center;text-align:center;padding:36px;gap:16px;}
+  .pill{border:1px solid #6A5A44;background:rgba(18,13,10,0.5);padding:11px 20px;border-radius:3px;font-size:14px;}
+  .footer{margin-top:56px;padding-top:24px;border-top:1px solid #2E2520;display:flex;flex-direction:column;gap:10px;}
+  .footer .fine{font-size:12px;color:#6B6050;line-height:1.6;}
+  @media (max-width:860px){
+    .hero{grid-template-columns:1fr;}
+    .gallery{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .stats{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .hero h1{font-size:38px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="nav">
+    <div class="display" style="font-size:20px;">$CHACHA</div>
+    <div class="nav-links mono">
+      <a href="#gallery">gallery</a>
+      <a href="#tokenomics">tokenomics</a>
+      <a href="#buy">how to buy</a>
+      <a href="https://pump.fun" class="btn-red">buy $CHACHA</a>
+    </div>
+  </div>
+
+  <div class="marquee mono">
+    <span>👑 MORE THAN YOU SEE &nbsp;·&nbsp; CHACHA SITS ON THE THRONE &nbsp;·&nbsp; SOLANA'S FUNNIEST COIN &nbsp;·&nbsp; CHACHA IS COOKING &nbsp;·&nbsp; 👑 MORE THAN YOU SEE &nbsp;·&nbsp; CHACHA SITS ON THE THRONE &nbsp;·&nbsp;</span>
+  </div>
+
+  <div class="hero">
+    <div style="display:flex;flex-direction:column;gap:20px;">
+      <div class="mono eyebrow">who is chacha?</div>
+      <h1 class="display">NOT JUST A COIN.<br>A MOVEMENT.</h1>
+      <p>One mascot, a thousand lives — king, genie, monk, castaway. $CHACHA is community-first, meme-powered, and built for the bull run. 🍳</p>
+      <div class="cta-row">
+        <a href="https://pump.fun" class="cta-primary">🚀 Buy on Pump.fun</a>
+        <a href="https://t.me/chachacoinofficial" class="cta-outline">Join the army</a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="Post_17-04.jpg" alt="Chacha on the Iron Throne">
+      <div class="cap mono">More than you see 👑</div>
+    </div>
+  </div>
+
+  <div class="section" id="gallery">
+    <div class="mono eyebrow">the many lives of chacha</div>
+    <h2 class="display h2">GALLERY 🎨</h2>
+    <div class="gallery">
+      <div class="g-item"><img src="Post_14-06.jpg" alt="The Pill"><div class="cap mono">The Pill</div></div>
+      <div class="g-item"><img src="Post_15-18.jpg" alt="Desert Rider"><div class="cap mono">Desert Rider</div></div>
+      <div class="g-item"><img src="Post_17-02.jpg" alt="Bear Wrestler"><div class="cap mono">Bear Wrestler</div></div>
+      <div class="g-item"><img src="Post_17-04.jpg" alt="The Throne"><div class="cap mono">The Throne</div></div>
+      <div class="g-item"><img src="Post_17-05.jpg" alt="Beach Mode"><div class="cap mono">Beach Mode</div></div>
+      <div class="g-item"><img src="Post_17-06.jpg" alt="Money Train"><div class="cap mono">Money Train</div></div>
+      <div class="g-item"><img src="Post_18-04.jpg" alt="Sky High"><div class="cap mono">Sky High</div></div>
+      <div class="g-item"><img src="Post_21-11.jpg" alt="The Genie"><div class="cap mono">The Genie</div></div>
+      <div class="g-item"><img src="Post_21-16.jpg" alt="More Than You See"><div class="cap mono">More Than You See</div></div>
+      <div class="g-item"><img src="Post_21-18.jpg" alt="Gong Master"><div class="cap mono">Gong Master</div></div>
+    </div>
+  </div>
+
+  <div class="section" id="tokenomics">
+    <div class="mono eyebrow">the numbers</div>
+    <h2 class="display h2">TOKENOMICS 📊</h2>
+    <div class="stats">
+      <div class="stat"><div class="display v">750M</div><div class="mono l">total supply</div></div>
+      <div class="stat"><div class="display v">0%</div><div class="mono l">team tokens</div></div>
+      <div class="stat"><div class="display v">0%</div><div class="mono l">tax</div></div>
+      <div class="stat"><div class="display v">100%</div><div class="mono l">community</div></div>
+    </div>
+  </div>
+
+  <div class="section" id="buy">
+    <div class="mono eyebrow">simple steps</div>
+    <h2 class="display h2">HOW TO BUY $CHACHA 🛒</h2>
+    <div class="step">
+      <div class="display n">01</div>
+      <div style="flex:1;"><div class="title">Get Phantom Wallet</div><div class="body">Download Phantom Wallet from phantom.app — available on Chrome, iOS & Android.</div></div>
+      <div class="mono tag">free</div>
+    </div>
+    <div class="step">
+      <div class="display n">02</div>
+      <div style="flex:1;"><div class="title">Buy SOL</div><div class="body">Purchase Solana from CoinDCX, WazirX, or Binance, then transfer it to Phantom.</div></div>
+      <div class="mono tag">~₹500 min</div>
+    </div>
+    <div class="step">
+      <div class="display n">03</div>
+      <div style="flex:1;"><div class="title">Go to Pump.fun</div><div class="body">Visit pump.fun, connect your Phantom wallet and search for $CHACHA.</div></div>
+      <div class="mono tag">solana dex</div>
+    </div>
+    <div class="step">
+      <div class="display n">04</div>
+      <div style="flex:1;"><div class="title">Swap SOL for $CHACHA</div><div class="body">Enter the SOL amount, confirm the transaction — welcome to the army.</div></div>
+      <div class="mono tag">lfg 🚀</div>
+    </div>
+  </div>
+
+  <div class="community">
+    <img src="Post_21-11.jpg" alt="Chacha genie">
+    <div class="overlay">
+      <h2 class="display" style="font-size:28px;margin:0;">CHACHA ARMY UNITE! 🔥</h2>
+      <p style="margin:0;color:#C9BFB2;font-size:15px;max-width:440px;">Follow us, join us, meme with us. The bull run starts here.</p>
+      <div class="cta-row" style="justify-content:center;">
+        <a href="https://x.com/chacha75076" class="pill">𝕏 Twitter / X</a>
+        <a href="https://t.me/chachacoinofficial" class="pill">✈️ Telegram</a>
+        <a href="https://pump.fun" class="cta-primary">🛒 Buy on Pump.fun</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="mono fine">$CHACHA is a meme coin with no intrinsic value. This is not financial advice. Always DYOR before investing. Crypto investments carry high risk.</div>
+    <div class="mono fine">© 2026 $CHACHA Network — Building the funniest bull run on Solana 🍳</div>
+  </div>
+
+</div>
+</body>
+</html>
